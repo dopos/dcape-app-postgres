@@ -18,6 +18,8 @@
       - DCAPE_DB_DUMP_DEST=/opt/backup
       - POSTGRES_INITDB_ARGS=${DB_INITDB_ARGS}
     volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
       - ${DCAPE_VAR}/db/data:/var/lib/postgresql/data
       - ${DCAPE_VAR}/db/backup:/opt/backup
       - ${DCAPE_VAR}/db/conf.d:/opt/conf.d
